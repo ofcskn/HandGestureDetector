@@ -1,1 +1,2 @@
-# HandSignalDetector
+# HandGestureDetector
+
