@@ -1,5 +1,5 @@
 opencv-python==4.10.0.84
-numpy==2.2.1
+numpy==1.26.4
 mediapipe==0.10.20
-django==3.8.1
+django==5.1.4
 tensorflow==2.18.0
