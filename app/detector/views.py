@@ -14,4 +14,4 @@ def emotion_detector(request):
     return StreamingHttpResponse(gen(VideoCamera(), 1), content_type='multipart/x-mixed-replace; boundary=frame')
 
 def hand_gesture_detector(request):
-    return StreamingHttpResponse(gen(VideoCamera()), content_type='multipart/x-mixed-replace; boundary=frame')
+    return StreamingHttpResponse(gen(VideoCamera(), 2), content_type='multipart/x-mixed-replace; boundary=frame')
