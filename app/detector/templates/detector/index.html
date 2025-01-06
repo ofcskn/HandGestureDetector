@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+    <h1>Welcome to the App</h1>
+    <p>Click the button below to start camera:</p>
+    <a href="{% url 'emotion_detector' %}">
+        <button style="padding: 10px 20px; font-size: 16px;">Emotion Detector</button>
+    </a>
+    <a href="{% url 'hand_gesture_detector' %}">
+        <button style="padding: 10px 20px; font-size: 16px;">Hand Gesture Detector</button>
+    </a>
+{% endblock %}
