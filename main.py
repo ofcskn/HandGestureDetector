@@ -20,13 +20,16 @@ def main():
         frame = cv2.flip(frame, 1)
 
         # Detect faces
-        faces = face_detector.detect_faces(frame)
+        # faces = face_detector.detect_faces(frame)
+        
+        # Detect emotion
+        frame_with_emotions = face_detector.detect_emotion(frame)
 
         # Detect hand landmarks (if a face is detected)
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = hand_detector.detect_landmarks(rgb_frame)
 
- # Check if any hands are detected
+        # Check if any hands are detected
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks:
                 # Classify gesture for each detected hand
