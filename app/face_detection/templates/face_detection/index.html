@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App</title>
-</head>
-<body>
-    <h1>Welcome to the App</h1>
-    <p>This is the default page of the app.</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+    <h2>Welcome to the Home Page</h2>
+    <p>This is the main content area.</p>
+{% endblock %}
