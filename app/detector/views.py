@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import PhotoUploadForm
 from .camera.streaming import gen
 from .camera.video_camera import VideoCamera
+from .models import Photo
 
 def index(request):
     """Default view for the app."""
@@ -21,11 +22,10 @@ def upload_photo(request):
         form = PhotoUploadForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('upload_success')  # Redirect to a success page
     else:
         form = PhotoUploadForm()
-
-    return render(request, 'detector/upload_photo.html', {'form': form})
+    uploaded_photos = Photo.objects.all() 
+    return render(request, 'detector/upload_photo.html', {'form': form, "uploaded_photos": uploaded_photos})
 
 def upload_success(request):
     return HttpResponse('Photo uploaded successfully!')
